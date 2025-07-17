@@ -1,0 +1,110 @@
+{
+    "checkpointing": {
+        "enabled": true
+    },
+    "mcpServers": {
+        "quantum-management": {
+            "command": "npx",
+            "args": [
+                "@chkp/quantum-management-mcp"
+            ],
+            "env": {
+                "MANAGEMENT_HOST": "10.72.107.125",
+                "MANAGEMENT_PORT": "443",
+                "API_KEY": "7EXnHPjB82hnyuQMIm5Z3g=="
+            }
+        },
+        "management-logs": {
+            "command": "npx",
+            "args": [
+                "@chkp/management-logs-mcp"
+            ],
+            "env": {
+                "MANAGEMENT_HOST": "10.72.107.125",
+                "MANAGEMENT_PORT": "443",
+                "API_KEY": "7EXnHPjB82hnyuQMIm5Z3g=="
+            }
+        },
+        "threat-prevention": {
+            "command": "npx",
+            "args": [
+                "@chkp/threat-prevention-mcp"
+            ],
+            "env": {
+                "MANAGEMENT_HOST": "10.72.107.125",
+                "MANAGEMENT_PORT": "443",
+                "API_KEY": "7EXnHPjB82hnyuQMIm5Z3g=="
+            }
+        },
+        "paloAltoCoreServer": {
+            "command": "node",
+            "args": [
+                "build/index.js"
+            ],
+            "cwd": "./paloalto-core-server/",
+            "env": {
+                "PANOS_API_KEY": "LUFRPT14N0JERk5tTVNmc25sbHhvTHdYZEFMNDgwRFk9UzFYYkJyeFl0aHdqRTBVMWZFU1YwVUxZdmIvdXV2QmZZOS8vQlBrUVVBWHlCQ3IrR21lMy9iVmpacmlpVEI4dg==", // Required by the server
+                "PANOS_API_BASE_URL": "https://10.72.16.6/restapi/v11.1",
+                "PANOS_VERIFY_SSL": false,
+                "PANOS_TIMEOUT": 30000,
+                "PANOS_DEBUG": false
+            }
+        },
+        "paloAltoPolicyServer": { // Example for Policy Server if it runs on a different port, e.g., 3001
+            "command": "node",
+            "args": [
+                "build/index.js"
+            ],
+            "cwd": "./paloalto-policy-server/",
+            "env": {
+                "PANOS_API_KEY": "LUFRPT14N0JERk5tTVNmc25sbHhvTHdYZEFMNDgwRFk9UzFYYkJyeFl0aHdqRTBVMWZFU1YwVUxZdmIvdXV2QmZZOS8vQlBrUVVBWHlCQ3IrR21lMy9iVmpacmlpVEI4dg==", // Required by the server
+                "PANOS_API_BASE_URL": "https://10.72.16.6/restapi/v11.1",
+                "PANOS_VERIFY_SSL": false,
+                "PANOS_TIMEOUT": 30000,
+                "PANOS_DEBUG": false
+            }
+        },
+        "paloAltoConfigServer": { // Example for Policy Server if it runs on a different port, e.g., 3001
+            "command": "node",
+            "args": [
+                "build/index.js"
+            ],
+            "cwd": "./paloalto-config-server/",
+            "env": {
+                "PANOS_API_KEY": "LUFRPT14N0JERk5tTVNmc25sbHhvTHdYZEFMNDgwRFk9UzFYYkJyeFl0aHdqRTBVMWZFU1YwVUxZdmIvdXV2QmZZOS8vQlBrUVVBWHlCQ3IrR21lMy9iVmpacmlpVEI4dg==", // Required by the server
+                "PANOS_API_BASE_URL": "https://10.72.16.6/restapi/v11.1",
+                "PANOS_VERIFY_SSL": false,
+                "PANOS_TIMEOUT": 30000,
+                "PANOS_DEBUG": false
+            }
+        },
+        "paloAltoObjectServer": { // Example for Policy Server if it runs on a different port, e.g., 3001
+            "command": "node",
+            "args": [
+                "build/index.js"
+            ],
+            "cwd": "./paloalto-objects-server/",
+            "env": {
+                "PANOS_API_KEY": "LUFRPT14N0JERk5tTVNmc25sbHhvTHdYZEFMNDgwRFk9UzFYYkJyeFl0aHdqRTBVMWZFU1YwVUxZdmIvdXV2QmZZOS8vQlBrUVVBWHlCQ3IrR21lMy9iVmpacmlpVEI4dg==", // Required by the server
+                "PANOS_API_BASE_URL": "https://10.72.16.6/restapi/v11.1",
+                "PANOS_VERIFY_SSL": false,
+                "PANOS_TIMEOUT": 30000,
+                "PANOS_DEBUG": false
+            }
+        },
+        "paloAltoDeviceServer": { // Example for Policy Server if it runs on a different port, e.g., 3001
+            "command": "node",
+            "args": [
+                "build/index.js"
+            ],
+            "cwd": "./paloalto-device-server/",
+            "env": {
+                "PANOS_API_KEY": "LUFRPT14N0JERk5tTVNmc25sbHhvTHdYZEFMNDgwRFk9UzFYYkJyeFl0aHdqRTBVMWZFU1YwVUxZdmIvdXV2QmZZOS8vQlBrUVVBWHlCQ3IrR21lMy9iVmpacmlpVEI4dg==", // Required by the server
+                "PANOS_API_BASE_URL": "https://10.72.16.6/restapi/v11.1",
+                "PANOS_VERIFY_SSL": false,
+                "PANOS_TIMEOUT": 30000,
+                "PANOS_DEBUG": false
+            }
+        }
+    }
+}

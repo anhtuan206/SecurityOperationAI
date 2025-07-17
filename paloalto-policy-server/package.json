@@ -1,0 +1,21 @@
+{
+  "name": "paloalto-policy-server",
+  "version": "0.1.0",
+  "description": "Palo Alto Policy Management MCP Server",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node --eval \"import('fs').then(fs => fs.chmodSync('build/index.js', '755'))\"",
+    "start": "node build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.9",
+    "dotenv": "^17.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "typescript": "^5.3.3"
+  }
+}

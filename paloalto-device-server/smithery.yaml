@@ -1,0 +1,31 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - panosApiKey
+    properties:
+      panosApiKey:
+        type: string
+        description: Your Palo Alto firewall API key. (required)
+      panosApiBaseUrl:
+        type: string
+        default: https://firewall.example.com/restapi/v11.0
+        description: Base URL for the Palo Alto REST API. Optional, defaults shown.
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['build/index.js'],
+      env: {
+        PANOS_API_KEY: config.panosApiKey,
+        PANOS_API_BASE_URL: config.panosApiBaseUrl
+      }
+    })
+  exampleConfig:
+    panosApiKey: your-api-key-here
+    panosApiBaseUrl: https://firewall.example.com/restapi/v11.0
