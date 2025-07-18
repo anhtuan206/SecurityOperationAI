@@ -105,6 +105,41 @@
                 "PANOS_TIMEOUT": 30000,
                 "PANOS_DEBUG": false
             }
+        },
+        "netbox": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "./netbox-mcp-server",
+                "run",
+                "server.py"
+            ],
+            "env": {
+                "NETBOX_URL": "https://netbox.dc.vn", //NETBOX_URL=https://netbox.dc.vn/ NETBOX_TOKEN=0f2a82f67fcd2c35827c5ba1191b52644523889d uv run server.py
+                "NETBOX_TOKEN": "0f2a82f67fcd2c35827c5ba1191b52644523889d"
+            }
+        },
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "C:\\",
+                "D:\\"
+            ]
+        },
+        "time": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-time"
+            ]
+        },
+        "memory": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-memory"
+            ]
         }
     }
 }
